@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>simple crystal game</title>
-
-  <style type="text/css">
-
-    .crystal-image {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
+    <title>simple crystal game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
+
 <body>
-
-  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-
-  <!-- Note that this div is now empty. We will fill it dynamically -->
-  <div id="crystals"> 
-  </div>
-  <!-- <img src="assets/images/blue.png" class="crystal-image crystals" id="button-1">
-  <img src="assets/images/green.png" class="crystal-image crystals" id="button-2">
-  <img src="assets/images/red.png" class="crystal-image crystals" id="button-3">
-  <img src="assets/images/yellow.png" class="crystal-image crystals" id="button-4"> -->
-
-  <div>Your total score is: <span id="current-score"></span></div>
-  <div id="result"></div>
-  <div>Wins: <span id="wins"></span></div>
-  <div>Losses: <span id="losses"></span></div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Crystal Collector!</h1>
+            <p class="lead">A random number is generated at the start of the game.</p>
+            <p class="lead">Each of the crystals below is assigned a random value. Click on the crystals to add to your total.</p>
+            <p class="lead">You win if your number matches the random number exactly. You lose if your number is greater than the random
+                number.
+            </p>
+            <p class="lead">When you win or lose, the game will automatically reload and new values will be assigned to the crystals.</p>
+        </div>
+    </div>
+    <div class="row cards">
+        <div class="col-4">
+            <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                <div class="card-header">Number to Guess:</div>
+                <div class="card-body">
+                    <h5 class="card-title" id="number-to-guess"></h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header" id="result"></div>
+                <div class="card-body">
+                    <h5 class="card-title">Wins:
+                        <span id="wins"></span>
+                    </h5>
+                    <h5 class="card-title">Losses:
+                        <span id="losses"></span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Your Current Number Is: </div>
+                <div class="card-body">
+                    <h5 class="card-title" id="current-score"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row cards">
+        <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container" id="crystals">
+                </div>
+            </nav>
+        </div>
+    </div>
 
     <!-- JAVASCRIPT  -->
-  <!-- ========================================= -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src=assets/javascript/game.js></script>
+    <!-- ========================================= -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src=assets/javascript/game.js></script>
 
 </body>
+
 </html>
